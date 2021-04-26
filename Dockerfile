@@ -1,9 +1,6 @@
-FROM golang:latest
+FROM ubuntu:latest
+EXPOSE 8080
+ADD main /
+CMD ["/main"]
 
-RUN mkdir /app
-ADD . /app
-WORKDIR /app
 
-RUN go build -o main .
-
-CMD ["/app/main"]
